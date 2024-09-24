@@ -12,10 +12,7 @@ def getResponseFromImage(image, question=None):
 
     # Upload the file and print a confirmation.
     sample_file = genai.upload_file(path=image,
-                                display_name="Jetpack drawing")
-
-    print(f"Uploaded file '{sample_file.display_name}' as: {sample_file.uri}")
-
+                                display_name=image.split('/')[-1])
 
     # Choose a Gemini API model.
     model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest")
